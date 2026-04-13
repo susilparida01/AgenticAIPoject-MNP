@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+.env
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+config/config.properties
+# If you want to keep a template, consider config/config.properties.example
+
+# OS
+.DS_Store
+Thumbs.db
