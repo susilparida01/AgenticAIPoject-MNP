@@ -119,3 +119,9 @@ class ConfigReader:
             if keys is None or key.upper() in [k.upper() for k in keys]:
                 if value:
                     os.environ[key.upper()] = value
+
+
+#########################################################################################
+# cr = ConfigReader()
+# print(cr.get_openai_api_key())
+
