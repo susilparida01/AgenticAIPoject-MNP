@@ -70,6 +70,14 @@ class ConfigReader:
         return cls.get_property("SOAP_WSDL_URL", "")
 
     @classmethod
+    def get_soap_endpoint_url(cls):
+        return cls.get_property("SOAP_ENDPOINT_URL", "")
+
+    @classmethod
+    def get_soap_payload(cls):
+        return cls.get_property("SOAP_PAYLOAD", "")
+
+    @classmethod
     def get_browser_url(cls):
         return cls.get_property("BROWSER_URL", "")
 
