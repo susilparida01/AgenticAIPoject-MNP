@@ -1,0 +1,27 @@
+# OpenAI Configuration
+OPENAI_API_KEY=your_openai_api_key_here
+MODEL_NAME=gpt-4o
+
+# PostgreSQL Configuration
+POSTGRES_URL=postgresql://user:password@localhost:5432/database
+
+# REST API Configuration
+REST_BASE_URL=
+
+# SOAP API Configuration
+SOAP_WSDL_URL=
+
+# Browser Configuration
+BROWSER_URL=https://example.com
+BROWSER_USERNAME=Admin
+BROWSER_PASSWORD=admin
+PLAYWRIGHT_HEADLESS=true
+
+# Python/UV Configuration
+# (Optional) Overrides for dynamic path resolution
+UV_PATH=
+SITE_PACKAGES_PATH=
+
+SOAP_WSDL_URL=https://webservice.example.com/service?wsdl
+SOAP_ENDPOINT_URL=https://webservice.example.com/service/endpoint
+SOAP_PAYLOAD=<?xml version="1.0" encoding="utf-8"?>
