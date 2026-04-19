@@ -4,6 +4,7 @@ from autogen_agentchat.agents import AssistantAgent
 from autogen_core import CancellationToken
 from autogen_core.tools import Workbench, ToolSchema, ToolResult, BaseTool, TextResultContent
 from framework.mcp_config.mcp_config import McpConfig
+from libs.soap_tools import SoapGetTool, SoapPostTool
 
 logger = logging.getLogger(__name__)
 
@@ -91,14 +92,15 @@ class AgentFactory:
         )
 
     async def create_api_agent(self, system_message: str) -> AssistantAgent:
-        """Create an API agent with REST and SOAP workbenches."""
-        rest_api_workbench = McpConfig.get_rest_api_workbench()
-        soap_api_workbench = McpConfig.get_soap_api_workbench()
+        """Create an API agent with local SOAP tools."""
+        
+        # Local tools for SOAP - we use these because mcp-soap-server is currently unavailable
+        local_soap_workbench = LocalToolWorkbench(tools=[SoapGetTool(), SoapPostTool()])
         
         return AssistantAgent(
             name="APIAgent",
             model_client=self.model_client,
-            workbench=[rest_api_workbench, soap_api_workbench],
+            workbench=[local_soap_workbench],
             system_message=system_message
         )
 
