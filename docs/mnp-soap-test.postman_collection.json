@@ -1,0 +1,79 @@
+{
+  "info": {
+    "_postman_id": "23c8037b-aba4-4a25-b299-013d5b6353c2",
+    "name": "mnp-soap-test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43033169"
+  },
+  "item": [
+    {
+      "name": "mnp-get-request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://164.52.200.222:8383/mnpzonewebservice/mnp/wsdl/mnp.wsdl",
+          "protocol": "http",
+          "host": [
+            "164",
+            "52",
+            "200",
+            "222"
+          ],
+          "port": "8383",
+          "path": [
+            "mnpzonewebservice",
+            "mnp",
+            "wsdl",
+            "mnp.wsdl"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "mnp-post-request",
+      "protocolProfileBehavior": {
+        "disabledSystemHeaders": {
+          "content-type": true
+        }
+      },
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": " text/xml",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:gs=\"MNPProtocol.xsd\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <gs:MNPFrame>\r\n            <SC-NOTICE>\r\n                <MessageSenderTelco>999</MessageSenderTelco>\r\n                <MessageReceiverTelco>891</MessageReceiverTelco>\r\n                <RequestId>999-251751340160062001</RequestId>\r\n                <Timestamp>2022-08-25T17:51:34.180+05:30</Timestamp>\r\n                <BCInfo>\r\n                    <SubscriberNumber>911891001002</SubscriberNumber>\r\n                    <BCAction>123</BCAction>\r\n                    <DCTime>2022-09-22T17:51:34.180+05:30</DCTime>\r\n                    <ServiceType>PostPaid</ServiceType>\r\n                    <RouteNumber>1234</RouteNumber>\r\n                    <RNO>JIO</RNO>\r\n                    <DNO>Airtel</DNO>\r\n                    <NRH>JIO</NRH>\r\n                    <ResultText>test</ResultText>\r\n                </BCInfo>\r\n                <BatchId>1234567</BatchId>\r\n                <LSA>Mumbai</LSA>\r\n                <Checksum>11234567</Checksum>\r\n            </SC-NOTICE>\r\n        </gs:MNPFrame>\r\n    </soapenv:Body>\r\n</soapenv:Envelope>",
+          "options": {
+            "raw": {
+              "language": "xml"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://164.52.200.222:8383/mnpzonewebservice/mnp/ws",
+          "protocol": "http",
+          "host": [
+            "164",
+            "52",
+            "200",
+            "222"
+          ],
+          "port": "8383",
+          "path": [
+            "mnpzonewebservice",
+            "mnp",
+            "ws"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
