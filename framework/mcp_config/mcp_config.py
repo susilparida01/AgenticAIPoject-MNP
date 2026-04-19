@@ -48,13 +48,15 @@ class McpConfig:
     def get_soap_api_workbench():
         """
         Get a SOAP API MCP workbench instance.
+        NOTE: mcp-soap-server is not currently available on public npm.
+        Using a placeholder that returns quickly or commenting out might be safer.
+        For now, we use the local SOAP tools in AgentFactory.
         """
+        # Return a workbench that points to a non-existent but immediate-failing command
+        # to avoid long npx timeouts if the user doesn't have it.
         soap_api_server_params = StdioServerParams(
-            command="npx",
-            args=[
-                "-y",
-                "mcp-soap-server"
-            ],
+            command="echo",
+            args=["SOAP MCP Server placeholder"],
             env={
                 "SOAP_WSDL_URL": ConfigReader.get_soap_wsdl_url()
             } )
